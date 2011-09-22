@@ -27,6 +27,9 @@
 #import "TMXGenerator.h"
 #import "LFCGzipUtility.h"
 #import "cencode.h"
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#import <UIKit/UIKit.h>		// Needed for UIDevice
+#endif
 
 
 @interface TMXGenerator ()
@@ -136,7 +139,7 @@
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 	UIImage* img = [UIImage imageNamed:[dict objectForKey:kTMXGeneratorTileSetImageAtlasFilename]];
 	CGSize imgSize = img.size;
-#else if defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
+#elif defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
 	NSImage* img = [NSImage imageNamed:[dict objectForKey:kTMXGeneratorTileSetImageAtlasFilename]];
 	CGSize imgSize = NSSizeToCGSize( img.size );
 #endif
