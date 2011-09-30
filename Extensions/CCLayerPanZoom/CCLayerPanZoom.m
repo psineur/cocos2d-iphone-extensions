@@ -146,7 +146,8 @@
 		UITouch *touch = [_touches objectAtIndex: 0];        
 		CGPoint curPos = [[CCDirector sharedDirector] convertToGL: [touch locationInView: [touch view]]];
 		[_delegate layerPanZoom: self 
-				 clickedAtPoint: [self convertToNodeSpace: curPos]];
+				 clickedAtPoint: [self convertToNodeSpace: curPos]
+                       tapCount: [touch tapCount] ];
 	}
 	for (UITouch *touch in [touches allObjects]) 
 	{

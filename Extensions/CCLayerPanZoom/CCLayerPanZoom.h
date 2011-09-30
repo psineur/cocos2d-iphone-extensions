@@ -34,7 +34,8 @@
 
 /** Send to delegate each time, when click event was obtained. */
 - (void) layerPanZoom: (CCLayerPanZoom *) sender 
-	   clickedAtPoint: (CGPoint) aPoint;
+	   clickedAtPoint: (CGPoint) aPoint
+             tapCount: (NSUInteger) tapCount;
 
 @end
 
